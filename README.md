@@ -22,52 +22,104 @@ Ejemplo de uso:
 ```json
 [
   {
-    "id": 1,
-    "nombre": "Ficus",
-    "precio": 500
+    "id": 68,
+    "nombre": "Pomelo",
+    "precio": 45222
+    "id_pedido": 10
+    "stock": 2
   },
   {
-    "id": 2,
+    "id": 62,
+    "nombre": "Limon",
+    "precio": 20000
+    "id_pedido": 11
+    "stock": 1
+  },
+  {
+    "id": 64,
+    "nombre": "pino",
+    "precio": 5000
+    "id_pedido": 10
+    "stock": 5
+  },
+  {
+    "id": 61,
+    "nombre": "jj",
+    "precio": 100
+    "id_pedido": 10
+    "stock": 2
+  },
+  {
+    "id": 69,
     "nombre": "Cactus",
-    "precio": 300
+    "precio": 100
+    "id_pedido": 10
+    "stock": 2
   }
 ]
 ```
-- Request con parámetro: 
+- Request con query string: 
 `GET` `/api/plantas?order=desc`
 
 - Response: 
 ```json
 [
   {
-    "id": 2,
-    "nombre": "Cactus",
-    "precio": 300
+    "id": 61,
+    "nombre": "jj",
+    "precio": 100
+    "id_pedido": 10
+    "stock": 2
   },
   {
-    "id": 1,
-    "nombre": "Ficus",
-    "precio": 500
+    "id": 69,
+    "nombre": "Cactus",
+    "precio": 100
+    "id_pedido": 10
+    "stock": 2
+  },
+  {
+    "id": 64,
+    "nombre": "pino",
+    "precio": 5000
+    "id_pedido": 10
+    "stock": 5
+  },
+  {
+    "id": 62,
+    "nombre": "Limon",
+    "precio": 20000
+    "id_pedido": 11
+    "stock": 1
+  },
+  {  
+    "id": 68,
+    "nombre": "Pomelo",
+    "precio": 45222
+    "id_pedido": 10
+    "stock": 2
   }
 ]
 ```
 ### 2. Obtener detalles de una planta específica
-- URL: `/api/plantas/id`
+- URL: `/api/plantas/:id`
 - Método: `GET`
 - Descripción: devuelve los datos de una planta específica según su ID.
 
 Ejemplo de uso:
-- Request: `GET` `/api/plantas/1`
+- Request: `GET` `/api/plantas/62`
 - Response:
 ```json
 {
-  "id": 1,
-  "nombre": "Ficus",
-  "precio": 500
-}
+  "id": 62,
+  "nombre": "Limon",
+  "precio": 20000
+  "id_pedido": 11
+  "stock": 1
+  }
 ```
 - Error: si el ID no existe.  
-  - Response: `'La planta con el id 1 no existe'`
+  - Response: `'La planta con el id 62 no existe'`
 
 ### 3. Agregar una nueva Planta
 - URL: `api/plantas`
@@ -80,19 +132,26 @@ Ejemplo de uso:
 ```json
 {
   "nombre": "Aloe Vera",
-  "precio": 400
+  "precio": 4000,
+  "id_pedido": 10
+  "stock": 15
 }
 ```
 - Response:
 ```json
 {
-  "id": 3,
+  "id": 70,
   "nombre": "Aloe Vera",
-  "precio": 400
+  "precio": 4000
+  "id_pedido": 10
+  "stock": 15
 }
 ```
 - Error: si faltan datos obligatorios.
   - Response: `'Faltan completar datos obligatorios'`
+
+-Error: si el id_pedido no existe.
+  - Response: `'El id_pedido no existe - No se puede asociar a ese pedido'`
 
 ### 4. Modificar una planta
 - URL: `api/plantas/:id`
@@ -100,21 +159,25 @@ Ejemplo de uso:
 - Descripción: modifica los datos de una planta específica según su ID.
 
 Ejemplo de uso: 
-- Request: `PUT` `api/plantas/2`
+- Request: `PUT` `api/plantas/62`
 - Body:
 ```json
 {
-  "nombre": "Cactus Actualizado",
-  "precio": 350
-}
+  "nombre": "Amapola",
+  "precio": 20000
+  "id_pedido": 11
+  "stock": 1
+  }
 ```
 - Response:
 ```json
 {
-  "id": 2,
-  "nombre": "Cactus Actualizado",
-  "precio": 350
-}
+  "id": 62,
+  "nombre": "Amapola",
+  "precio": 20000
+  "id_pedido": 11
+  "stock": 1
+  }
 ```
 - Error: Si el ID no existe.
   - Response: `'La planta con el id 2 no existe'`
