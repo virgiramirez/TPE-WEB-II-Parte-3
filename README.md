@@ -24,36 +24,36 @@ Ejemplo de uso:
   {
     "id": 61,
     "nombre": "jj",
-    "precio": 100
-    "id_pedido": 10
+    "precio": 100,
+    "id_pedido": 10,
     "stock": 2
   },
   {
     "id": 69,
     "nombre": "Cactus",
-    "precio": 100
-    "id_pedido": 10
+    "precio": 100,
+    "id_pedido": 10,
     "stock": 2
   },
   {
     "id": 64,
     "nombre": "pino",
-    "precio": 5000
-    "id_pedido": 10
+    "precio": 5000,
+    "id_pedido": 10,
     "stock": 5
   },
   {
     "id": 62,
     "nombre": "Limon",
-    "precio": 20000
-    "id_pedido": 11
+    "precio": 20000,
+    "id_pedido": 11,
     "stock": 1
   },
   {  
     "id": 68,
     "nombre": "Pomelo",
-    "precio": 45222
-    "id_pedido": 10
+    "precio": 45222,
+    "id_pedido": 10,
     "stock": 2
   }
 ]
@@ -67,36 +67,36 @@ Ejemplo de uso:
   {
     "id": 68,
     "nombre": "Pomelo",
-    "precio": 45222
-    "id_pedido": 10
+    "precio": 45222,
+    "id_pedido": 10,
     "stock": 2
   },
   {
     "id": 62,
     "nombre": "Limon",
-    "precio": 20000
-    "id_pedido": 11
+    "precio": 20000,
+    "id_pedido": 11,
     "stock": 1
   },
   {
     "id": 64,
     "nombre": "pino",
-    "precio": 5000
-    "id_pedido": 10
+    "precio": 5000,
+    "id_pedido": 10,
     "stock": 5
   },
   {
     "id": 61,
     "nombre": "jj",
-    "precio": 100
-    "id_pedido": 10
+    "precio": 100,
+    "id_pedido": 10,
     "stock": 2
   },
   {
     "id": 69,
     "nombre": "Cactus",
-    "precio": 100
-    "id_pedido": 10
+    "precio": 100,
+    "id_pedido": 10,
     "stock": 2
   }
 ]
@@ -113,8 +113,8 @@ Ejemplo de uso:
 {
   "id": 62,
   "nombre": "Limon",
-  "precio": 20000
-  "id_pedido": 11
+  "precio": 20000,
+  "id_pedido": 11,
   "stock": 1
   }
 ```
@@ -133,7 +133,7 @@ Ejemplo de uso:
 {
   "nombre": "Aloe Vera",
   "precio": 4000,
-  "id_pedido": 10
+  "id_pedido": 10,
   "stock": 15
 }
 ```
@@ -142,8 +142,8 @@ Ejemplo de uso:
 {
   "id": 70,
   "nombre": "Aloe Vera",
-  "precio": 4000
-  "id_pedido": 10
+  "precio": 4000,
+  "id_pedido": 10,
   "stock": 15
 }
 ```
@@ -164,8 +164,8 @@ Ejemplo de uso:
 ```json
 {
   "nombre": "Amapola",
-  "precio": 20000
-  "id_pedido": 11
+  "precio": 20000,
+  "id_pedido": 11,
   "stock": 1
   }
 ```
@@ -174,8 +174,8 @@ Ejemplo de uso:
 {
   "id": 62,
   "nombre": "Amapola",
-  "precio": 20000
-  "id_pedido": 11
+  "precio": 20000,
+  "id_pedido": 11,
   "stock": 1
   }
 ```
