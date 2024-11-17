@@ -22,49 +22,6 @@ Ejemplo de uso:
 ```json
 [
   {
-    "id": 68,
-    "nombre": "Pomelo",
-    "precio": 45222
-    "id_pedido": 10
-    "stock": 2
-  },
-  {
-    "id": 62,
-    "nombre": "Limon",
-    "precio": 20000
-    "id_pedido": 11
-    "stock": 1
-  },
-  {
-    "id": 64,
-    "nombre": "pino",
-    "precio": 5000
-    "id_pedido": 10
-    "stock": 5
-  },
-  {
-    "id": 61,
-    "nombre": "jj",
-    "precio": 100
-    "id_pedido": 10
-    "stock": 2
-  },
-  {
-    "id": 69,
-    "nombre": "Cactus",
-    "precio": 100
-    "id_pedido": 10
-    "stock": 2
-  }
-]
-```
-- Request con query string: 
-`GET` `/api/plantas?order=desc`
-
-- Response: 
-```json
-[
-  {
     "id": 61,
     "nombre": "jj",
     "precio": 100
@@ -96,6 +53,49 @@ Ejemplo de uso:
     "id": 68,
     "nombre": "Pomelo",
     "precio": 45222
+    "id_pedido": 10
+    "stock": 2
+  }
+]
+```
+- Request con query string: 
+`GET` `/api/plantas?order=desc`
+
+- Response: 
+```json
+[
+  {
+    "id": 68,
+    "nombre": "Pomelo",
+    "precio": 45222
+    "id_pedido": 10
+    "stock": 2
+  },
+  {
+    "id": 62,
+    "nombre": "Limon",
+    "precio": 20000
+    "id_pedido": 11
+    "stock": 1
+  },
+  {
+    "id": 64,
+    "nombre": "pino",
+    "precio": 5000
+    "id_pedido": 10
+    "stock": 5
+  },
+  {
+    "id": 61,
+    "nombre": "jj",
+    "precio": 100
+    "id_pedido": 10
+    "stock": 2
+  },
+  {
+    "id": 69,
+    "nombre": "Cactus",
+    "precio": 100
     "id_pedido": 10
     "stock": 2
   }
