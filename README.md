@@ -9,10 +9,14 @@ Esta API permite gestionar una colección de plantas. Se pueden listar, agregar,
 
 Parámetros opcionales:
 - `order` (query string): define el orden de la lista.
+- `attribute` (query string): define el campo de la tabla.
+- `value` (query string): define el valor a filtrar.
 
 Puede ser:
 - `asc` (orden ascendente, predeterminado)
 - `desc` (orden descendente)
+- `attribute`: nombre, precio, id_pedido, stock
+- `value`: limon, 5000, 10, 2
 
 Ejemplo de uso:
 - Request:
@@ -101,6 +105,93 @@ Ejemplo de uso:
   }
 ]
 ```
+
+- Request con query string: 
+`GET` `/api/plantas?attribute=nombre&value=limon`
+
+```json
+[
+   {
+        "id_planta": 79,
+        "nombre": "Limon 3",
+        "precio": 2,
+        "id_pedido": 11,
+        "stock": 6,
+        "imagen": ""
+    },
+    {
+        "id_planta": 73,
+        "nombre": "limon",
+        "precio": 120,
+        "id_pedido": 10,
+        "stock": 8,
+        "imagen": "-"
+    },
+    {
+        "id_planta": 74,
+        "nombre": "limon",
+        "precio": 120,
+        "id_pedido": 10,
+        "stock": 8,
+        "imagen": "-"
+    },
+    {
+        "id_planta": 75,
+        "nombre": "limon",
+        "precio": 120,
+        "id_pedido": 10,
+        "stock": 8,
+        "imagen": ""
+    },
+    {
+        "id_planta": 62,
+        "nombre": "Limon",
+        "precio": 20000,
+        "id_pedido": 11,
+        "stock": 1,
+        "imagen": "./uploads/images/planta_62.jpg"
+    }
+]
+```
+- Request con query string: 
+`GET` `/api/plantas?attribute=nombre&value=limon&order=desc`
+```json
+
+[
+    {
+        "id_planta": 62,
+        "nombre": "Limon",
+        "precio": 20000,
+        "id_pedido": 11,
+        "stock": 1,
+        "imagen": "./uploads/images/planta_62.jpg"
+    },
+    {
+        "id_planta": 73,
+        "nombre": "limon",
+        "precio": 120,
+        "id_pedido": 10,
+        "stock": 8,
+        "imagen": "-"
+    },
+    {
+        "id_planta": 74,
+        "nombre": "limon",
+        "precio": 120,
+        "id_pedido": 10,
+        "stock": 8,
+        "imagen": "-"
+    },
+    {
+        "id_planta": 75,
+        "nombre": "limon",
+        "precio": 120,
+        "id_pedido": 10,
+        "stock": 8,
+        "imagen": ""
+    }
+]
+```
 ### 2. Obtener detalles de una planta específica
 - URL: `/api/plantas/:id`
 - Método: `GET`
@@ -181,6 +272,18 @@ Ejemplo de uso:
 ```
 - Error: Si el ID no existe.
   - Response: `'La planta con el id 2 no existe'`
+
+ ## Autenticación y autorizacion
+ Para poder agregar o actualizar una planta se debe generar el siguiente endpoints:
+ - URL: `api/usuarios/token`
+ - Método: GET
+ - Descripcion: Obtiene un token para autorizar al administrador.
+
+Ejemplo de uso:
+  1. Seleccionar en la solapa Auth type: basic auth;
+  2. Completar Username: webadmin y password: admin, copiar el token generado; 
+  3. Luego cambiar la solapa Auth type a: Bearer Token y pegar el token obtenido;
+  4. Realizar las acciones que se deseen (PUT o POST);   
 
 ## Aclaraciones
 Todos los errores devuelven un código de estado HTTP apropiado y un mensaje descriptivo. 
