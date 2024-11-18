@@ -1,5 +1,5 @@
 <?php
-    // esta es mi respuesta, lo que retorno siempre
+
     class JSONView {
         public function response($data, $status = 200) {
             header("Content-Type: application/json");

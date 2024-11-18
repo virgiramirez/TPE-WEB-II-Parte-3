@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2024 a las 02:04:02
+-- Tiempo de generación: 17-11-2024 a las 23:22:31
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -39,10 +39,8 @@ CREATE TABLE `pedidos` (
 --
 
 INSERT INTO `pedidos` (`id_pedido`, `fecha_pedido`, `estado`, `total`) VALUES
-(1, '2024-09-18', 'Pedido', 16000),
-(2, '2024-08-25', 'Finalizado', 20000),
-(3, '2024-11-20', 'No entregado', 12500),
-(4, '2023-06-15', 'Entregado', 20000);
+(10, '2024-10-18', 'Pendiente', 100),
+(11, '2024-10-19', 'No entregado', 20000);
 
 -- --------------------------------------------------------
 
@@ -64,11 +62,20 @@ CREATE TABLE `planta` (
 --
 
 INSERT INTO `planta` (`id_planta`, `nombre`, `precio`, `id_pedido`, `stock`, `imagen`) VALUES
-(40, 'Rosa', 2500, 1, 10, './uploads/images/planta_40.jpeg'),
-(41, 'Girasol', 18000, 1, 6, './uploads/images/planta_41.jpg'),
-(43, 'Gomero', 13500, 1, 7, './uploads/images/planta_43.jpg'),
-(44, 'Lilium', 16000, 1, 12, './uploads/images/planta_44.jpg'),
-(45, 'Cactus', 5000, 1, 5, './uploads/images/planta_45.jpg');
+(61, 'jj', 100, 10, 2, './uploads/images/planta_61.jpg'),
+(62, 'Limon', 20000, 11, 1, './uploads/images/planta_62.jpg'),
+(64, 'pino', 5000, 10, 5, '/uploads/images/planta_62.jpg'),
+(68, 'pomelo', 45222, 11, 2, '-'),
+(69, 'rosa', 150, 11, 5, './uploads/images/planta_62.jpg'),
+(70, 'cactus', 75, 10, 10, './uploads/images/planta_63.jpg'),
+(71, 'aloe vera', 120, 11, 8, './uploads/images/planta_65.jpg'),
+(72, 'lirio', 120, 11, 8, '-'),
+(73, 'limon', 120, 10, 8, '-'),
+(74, 'limon', 120, 10, 8, '-'),
+(75, 'limon', 120, 10, 8, ''),
+(76, 'Calathea', 300, 11, 4, ''),
+(77, 'Calathea', 300, 11, 4, ''),
+(78, 'Calathea', 300, 10, 4, '');
 
 -- --------------------------------------------------------
 
@@ -123,13 +130,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `planta`
 --
 ALTER TABLE `planta`
-  MODIFY `id_planta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id_planta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
