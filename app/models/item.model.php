@@ -42,8 +42,9 @@
             }
         }
         
-        public function getPlants($attribute = null, $valor = null) {
+        public function getPlants($attribute = null, $valor = null, $order = null) {
             $sql = 'SELECT * FROM planta';
+            $orderBy = $sql.'ORDER BY precio ' . $order;
             $params = [];
             if($attribute) {
                 $sql .= ' WHERE ';
@@ -95,6 +96,11 @@
             $query->execute([$name, $price, $orderId, $stock]);
         
             return $this->db->lastInsertId();
+        }
+
+        public function updatePlant($id, $nombre, $precio, $pedido, $stock) {
+            $query = $this->db->prepare('UPDATE planta SET nombre = ?, precio = ?, id_pedido = ?, stock = ? WHERE id_planta = ?');
+            $query->execute([$nombre, $precio, $pedido, $stock, $id]);
         }
 
         public function getOrders($id = null) {
