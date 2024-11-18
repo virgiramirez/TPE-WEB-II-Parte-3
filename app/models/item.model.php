@@ -43,8 +43,8 @@
         }
         
         public function getPlants($attribute = null, $valor = null, $order = null) {
+            
             $sql = 'SELECT * FROM planta';
-            $orderBy = $sql.'ORDER BY precio ' . $order;
             $params = [];
             if($attribute) {
                 $sql .= ' WHERE ';
@@ -60,10 +60,10 @@
                         $params[':valor'] = '%' . $valor . '%';
                         break;
                     default:
-                    return null;   
-                    
+                    return null;    
                 }
             }
+            $sql .= " ORDER BY precio $order";
             
             // Ejecuto la consulta
             $query = $this->db->prepare($sql);
